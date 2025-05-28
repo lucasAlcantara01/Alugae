@@ -11,6 +11,12 @@
         <title>Lista Carros</title>
         <link href="../../dist/css/output.css" rel="stylesheet" type="text/css"/>
     </head>
+    <%
+        String usuario = (String) session.getAttribute("usuario");
+        if(usuario == null){
+            response.sendRedirect("login.jsp");
+        } else {
+    %> 
     <body>
         <%
             CarroDAO carroDAO = new CarroDAO();
@@ -164,4 +170,5 @@
         </main>
         <script src="../../dist/js/script.js" type="text/javascript"></script>
     </body>
+    <% } %> 
 </html>

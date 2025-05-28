@@ -129,4 +129,27 @@ public class EmpresaDAO {
             return false;
         }
     }
+    
+    public boolean login(String usuario, String senha) throws ClassNotFoundException, ParseException {
+        //Conectar
+        Connection conexao = null;
+        try {
+            conexao = ConectaDB.conectar(); //Abre a conexão
+            String sql = "SELECT * FROM empresa WHERE email = ? AND senha = ? " ;
+            PreparedStatement stmt = conexao.prepareStatement(sql); // cria uma instrução
+            stmt.setString(1, usuario);
+            stmt.setString(2, senha);
+
+            ResultSet rs = stmt.executeQuery();
+            
+            if (rs.next()) {
+                return true;
+            } else {
+                return false;
+            }
+        } catch (SQLException ex) {
+            System.out.println("Erro SQL: " + ex);
+            return false;
+        }
+    }
 }
