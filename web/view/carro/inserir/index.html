@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Inseri Carro</title>
+    <link href="../../../dist/css/output.css" rel="stylesheet" type="text/css"/>
+  </head>
+  <body>
+    <div>
+      <h2 class="text-3xl text-gray-900 font-semibold mb-13">
+        Cadastrar Carro
+      </h2>
+      <form action="inserir.jsp" class="flex flex-col gap-4 max-w-[700px]">
+        <div class="flex gap-6 w-full">
+          <label class="flex flex-1 flex-col gap-1.5 text-sm">
+            Modelo
+            <input
+              type="text"
+              name="modelo"
+              class="bg-white shadow-sm px-4 py-2.5 rounded-lg text-base placeholder:text-base"
+              placeholder="Civic"
+              required
+            />
+          </label>
+          <label class="flex flex-1 flex-col gap-1.5 text-sm">
+            Marca
+            <input
+              type="text"
+              name="marca"
+              class="bg-white shadow-sm px-4 py-2.5 rounded-lg text-base placeholder:text-base"
+              placeholder="Honda"
+              required
+            />
+          </label>
+        </div>
+        <div class="flex gap-6 w-full">
+          <label class="flex flex-1 flex-col gap-1.5 text-sm">
+            Ano
+            <input
+              type="number"
+              name="ano"
+              maxlength="4"
+              class="bg-white shadow-sm px-4 py-2.5 rounded-lg text-base placeholder:text-base"
+              placeholder="2025"
+              required
+            />
+          </label>
+          <label class="flex flex-1 flex-col gap-1.5 text-sm">
+            Placa
+            <input
+              type="text"
+              name="placa"
+              class="bg-white shadow-sm px-4 py-2.5 rounded-lg text-base placeholder:text-base"
+              placeholder="ABC-123"
+              required
+            />
+          </label>
+        </div>
+        <label class="flex flex-col gap-1.5 text-sm">
+          Preço
+          <input
+            type="number"
+            name="preco"
+            class="bg-white shadow-sm px-4 py-2.5 rounded-lg text-base placeholder:text-base"
+            placeholder="R$"
+            required
+          />
+        </label>
+        <button
+          class="flex gap-2 px-3 py-4 text-center text-white bg-orange-500 rounded-lg hover:bg-amber-400 transition-all duration-200 ease-in"
+          type="submit"
+        >
+          Adicionar Carro
+        </button>
+      </form>
+    </div>
+  </body>
+</html>

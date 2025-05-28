@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Inseri Locação</title>
+    <link href="../../../dist/css/output.css" rel="stylesheet" type="text/css"/>
+  </head>
+  <body>
+    <div>
+      <h2 class="text-3xl text-gray-900 font-semibold mb-13">
+        Cadastrar Locação
+      </h2>
+      <form action="inserir.jsp" class="flex flex-col gap-4 max-w-[700px]">
+        <div class="flex gap-6 w-full">
+          <label class="flex flex-1 flex-col gap-1.5 text-sm">
+            Id Cliente
+            <input
+              type="number"
+              name="idcliente"
+              class="bg-white shadow-sm px-4 py-2.5 rounded-lg text-base placeholder:text-base"
+              required
+            />
+          </label>
+          <label class="flex flex-1 flex-col gap-1.5 text-sm">
+            Id Carro
+            <input
+              type="number"
+              name="idcarro"
+              class="bg-white shadow-sm px-4 py-2.5 rounded-lg text-base placeholder:text-base"
+              required
+            />
+          </label>
+        </div>
+        <div class="flex gap-6 w-full">
+          <label class="flex flex-1 flex-col gap-1.5 text-sm">
+            Data Inicio
+            <input
+              type="date"
+              name="datainicio"
+              class="bg-white shadow-sm px-4 py-2.5 rounded-lg text-base placeholder:text-base"
+              required
+            />
+          </label>
+          <label class="flex flex-1 flex-col gap-1.5 text-sm">
+            Data Fim
+            <input
+              type="date"
+              name="datafim"
+              class="bg-white shadow-sm px-4 py-2.5 rounded-lg text-base placeholder:text-base"
+              required
+            />
+          </label>
+        </div>
+        <label class="flex flex-col gap-1.5 text-sm">
+          Valor Total
+          <input
+            type="number"
+            name="valortotal"
+            class="bg-white shadow-sm px-4 py-2.5 rounded-lg text-base placeholder:text-base"
+            required
+          />
+        </label>
+        <button
+          class="flex gap-2 px-3 py-4 text-center text-white bg-orange-500 rounded-lg hover:bg-amber-400 transition-all duration-200 ease-in"
+          type="submit"
+        >
+          Adicionar Locação
+        </button>
+      </form>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Inserir Empresa</title>
+    <link href="../../../dist/css/output.css" rel="stylesheet" type="text/css"/>
+  </head>
+  <body>
+    <div>
+      <h2 class="text-3xl text-gray-900 font-semibold mb-13">
+        Cadastrar Empresa
+      </h2>
+      <form action="inserir.jsp" class="flex flex-col gap-4 max-w-[700px]">
+        <div class="flex gap-6 w-full">
+          <label class="flex flex-1 flex-col gap-1.5 text-sm">
+            Nome
+            <input
+              type="text"
+              name="nome"
+              class="bg-white shadow-sm px-4 py-2.5 rounded-lg text-base placeholder:text-base"
+              required
+            />
+          </label>
+          <label class="flex flex-1 flex-col gap-1.5 text-sm">
+            E-mail
+            <input
+              type="text"
+              name="email"
+              class="bg-white shadow-sm px-4 py-2.5 rounded-lg text-base placeholder:text-base"
+              required
+            />
+          </label>
+        </div>
+        <div class="flex gap-6 w-full">
+          <label class="flex flex-1 flex-col gap-1.5 text-sm">
+            Endereço
+            <input
+              type="text"
+              name="endereco"
+              class="bg-white shadow-sm px-4 py-2.5 rounded-lg text-base placeholder:text-base"
+              required
+            />
+          </label>
+          <label class="flex flex-1 flex-col gap-1.5 text-sm">
+            CNPJ
+            <input
+              type="text"
+              name="cnpj"
+              class="bg-white shadow-sm px-4 py-2.5 rounded-lg text-base placeholder:text-base"
+              required
+            />
+          </label>
+        </div>
+        <button
+          class="flex gap-2 px-3 py-4 text-center text-white bg-orange-500 rounded-lg hover:bg-amber-400 transition-all duration-200 ease-in"
+          type="submit"
+        >
+          Adicionar Empresa
+        </button>
+      </form>
+    </div>
+  </body>
+</html>
