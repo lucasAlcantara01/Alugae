@@ -70,9 +70,9 @@
                     </tr>
                   </thead>
                   <tbody class="bg-white">
-                     
+
                     <% for(int i = 0; i<= lista.size()-1; i++ ){ %> 
-                    <tr class="border-b border-gray-100">
+            <tr class="border-b border-gray-100">
                       <td class="px-4 py-3 text-gray-500"><%= lista.get(i).getId() %></td>
                       <td class="px-4 py-3 font-semibold text-gray-900"><%= lista.get(i).getIdCliente() %></td>
                       <td class="px-4 py-3 text-gray-400"><%= lista.get(i).getIdCarro() %></td>
