@@ -102,7 +102,7 @@
                 />
               </g>
             </svg>
-            Loca��o
+            Locação
           </a>
           <a
             href="view/pagamento/listar.jsp"

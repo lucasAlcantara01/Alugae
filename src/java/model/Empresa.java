@@ -8,7 +8,6 @@ public class Empresa {
     private String endereco;
     private String cnpj;
     private String senha; 
-   
 
     public int getId() {
         return id;

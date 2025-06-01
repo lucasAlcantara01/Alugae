@@ -10,11 +10,10 @@ import util.ConectaDB;
 public class EmpresaDAO {
 
     public boolean inserir(Empresa empresa) throws ClassNotFoundException {
-        //Conectar
+       
         Connection conexao = null;
         try {
-            conexao = ConectaDB.conectar(); //Abre a conexão
-            //String sql = "Insert into cliente (codigo, nome, renda, nasc) values(987654, 'José da Silva', 9500, '1981/03/22')";
+            conexao = ConectaDB.conectar(); 
             String sql = "INSERT INTO empresa (nome, email, endereco, cnpj) values(?,?,?,?)";
 
             PreparedStatement stmt = conexao.prepareStatement(sql);
@@ -23,7 +22,7 @@ public class EmpresaDAO {
             stmt.setString(3, empresa.getEndereco());
             stmt.setString(4, empresa.getCnpj());
 
-            stmt.executeUpdate(); // Insert - Update - Delete
+            stmt.executeUpdate(); 
             return true;
         } catch (SQLException ex) {
             System.out.println("Erro SQL: " + ex);
@@ -32,11 +31,11 @@ public class EmpresaDAO {
     }
 
     public Empresa consultar(Empresa empresa) throws ClassNotFoundException, ParseException {
-        //Conectar
+       
         Connection conexao = null;
         try {
-            conexao = ConectaDB.conectar(); //Abre a conexão
-            Statement stmt = conexao.createStatement(); // cria uma instrução
+            conexao = ConectaDB.conectar(); 
+            Statement stmt = conexao.createStatement(); 
 
             String sql = "SELECT * FROM empresa WHERE id = " + empresa.getId();
             ResultSet rs = stmt.executeQuery(sql);
@@ -65,8 +64,8 @@ public class EmpresaDAO {
         List lista = new ArrayList();
         Connection conexao = null;
         try {
-            conexao = ConectaDB.conectar(); //Abre a conexão
-            Statement stmt = conexao.createStatement(); // cria uma instrução
+            conexao = ConectaDB.conectar(); 
+            Statement stmt = conexao.createStatement(); 
 
             String sql = "SELECT * FROM empresa";
             ResultSet rs = stmt.executeQuery(sql);
@@ -96,13 +95,13 @@ public class EmpresaDAO {
     }
 
     public boolean excluir(Empresa empresa) throws ClassNotFoundException {
-        //Conectar
+   
         Connection conexao = null;
         try {
-            conexao = ConectaDB.conectar(); //Abre a conexão
+            conexao = ConectaDB.conectar(); 
             Statement stmt = conexao.createStatement();
             String sql = "DELETE FROM empresa WHERE id = " + empresa.getId();
-            stmt.executeUpdate(sql); // Insert - Update - Delete
+            stmt.executeUpdate(sql);
             return true;
         } catch (SQLException ex) {
             System.out.println("Erro SQL: " + ex);
@@ -111,10 +110,10 @@ public class EmpresaDAO {
     }
 
     public boolean alterar(Empresa empresa) throws ClassNotFoundException {
-        //Conectar
+        
         Connection conexao = null;
         try {
-            conexao = ConectaDB.conectar(); //Abre a conexão
+            conexao = ConectaDB.conectar(); 
             String sql = "UPDATE empresa SET nome= ?, email= ?, endereco= ?, cnpj= ? WHERE id = ?";
             PreparedStatement stmt = conexao.prepareStatement(sql);
             stmt.setString(1, empresa.getNome());
@@ -122,7 +121,7 @@ public class EmpresaDAO {
             stmt.setString(3, empresa.getEndereco());
             stmt.setString(4, empresa.getCnpj());
             stmt.setInt(5, empresa.getId());
-            stmt.executeUpdate(); // Insert - Update - Delete
+            stmt.executeUpdate();
             return true;
         } catch (SQLException ex) {
             System.out.println("Erro SQL: " + ex);
@@ -131,12 +130,12 @@ public class EmpresaDAO {
     }
     
     public boolean login(String usuario, String senha) throws ClassNotFoundException, ParseException {
-        //Conectar
+        
         Connection conexao = null;
         try {
-            conexao = ConectaDB.conectar(); //Abre a conexão
+            conexao = ConectaDB.conectar(); 
             String sql = "SELECT * FROM empresa WHERE email = ? AND senha = ? " ;
-            PreparedStatement stmt = conexao.prepareStatement(sql); // cria uma instrução
+            PreparedStatement stmt = conexao.prepareStatement(sql);
             stmt.setString(1, usuario);
             stmt.setString(2, senha);
 

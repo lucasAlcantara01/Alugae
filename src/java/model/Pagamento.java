@@ -10,7 +10,7 @@ public class Pagamento {
     private Date dataFim;
     private double valorTotal;
 
-    // Getters e Setters
+   
     public int getId() {
         return id;
     }

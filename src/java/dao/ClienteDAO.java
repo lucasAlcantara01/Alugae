@@ -10,7 +10,7 @@ import util.ConectaDB;
 public class ClienteDAO {
 
     public boolean inserir(Cliente cli) throws ClassNotFoundException {
-        //Conectar
+       
         Connection conexao = null;
         try {
             conexao = ConectaDB.conectar();
@@ -24,7 +24,7 @@ public class ClienteDAO {
             stmt.setString(4, cli.getTelefone());
             stmt.setString(5, cli.getEndereco());
 
-            stmt.executeUpdate(); // Insert - Update - Delete
+            stmt.executeUpdate();
             return true;
         } catch (SQLException ex) {
             System.out.println("Erro SQL: " + ex);
@@ -36,8 +36,8 @@ public class ClienteDAO {
         //Conectar
         Connection conexao = null;
         try {
-            conexao = ConectaDB.conectar(); //Abre a conexão
-            Statement stmt = conexao.createStatement(); // cria uma instrução
+            conexao = ConectaDB.conectar();
+            Statement stmt = conexao.createStatement();
 
             String sql = "SELECT * FROM cliente WHERE id = " + cli.getId();
             ResultSet rs = stmt.executeQuery(sql);
@@ -66,8 +66,8 @@ public class ClienteDAO {
         List lista = new ArrayList();
         Connection conexao = null;
         try {
-            conexao = ConectaDB.conectar(); //Abre a conexão
-            Statement stmt = conexao.createStatement(); // cria uma instrução
+            conexao = ConectaDB.conectar();
+            Statement stmt = conexao.createStatement();
 
             String sql = "SELECT * FROM cliente";
             ResultSet rs = stmt.executeQuery(sql);
@@ -96,13 +96,13 @@ public class ClienteDAO {
     }
 
     public boolean excluir(Cliente cli) throws ClassNotFoundException {
-        //Conectar
+     
         Connection conexao = null;
         try {
-            conexao = ConectaDB.conectar(); //Abre a conexão
+            conexao = ConectaDB.conectar(); 
             Statement stmt = conexao.createStatement();
             String sql = "DELETE FROM cliente WHERE id = " + cli.getId();
-            stmt.executeUpdate(sql); // Insert - Update - Delete
+            stmt.executeUpdate(sql);
             return true;
         } catch (SQLException ex) {
             System.out.println("Erro SQL: " + ex);
@@ -111,10 +111,10 @@ public class ClienteDAO {
     }
 
     public boolean alterar(Cliente cli) throws ClassNotFoundException {
-        //Conectar
+        
         Connection conexao = null;
         try {
-            conexao = ConectaDB.conectar(); //Abre a conexão
+            conexao = ConectaDB.conectar(); 
             String sql = "UPDATE cliente SET nome= ?, email= ?, cpf= ?, telefone= ?, endereco = ? WHERE id = ? ";
             PreparedStatement stmt = conexao.prepareStatement(sql);
             
@@ -124,7 +124,7 @@ public class ClienteDAO {
             stmt.setString(4, cli.getTelefone());
             stmt.setString(5, cli.getEndereco());
             stmt.setInt(6, cli.getId());
-            stmt.executeUpdate(); // Insert - Update - Delete
+            stmt.executeUpdate(); 
             return true;
         } catch (SQLException ex) {
             System.out.println("Erro SQL: " + ex);

@@ -11,10 +11,10 @@ import util.ConectaDB;
 public class LocacaoDAO {
 
     public boolean inserir(Locacao locacao) throws ClassNotFoundException {
-        //Conectar
+        
         Connection conexao = null;
         try {
-            conexao = ConectaDB.conectar(); //Abre a conexão
+            conexao = ConectaDB.conectar(); 
 
             String sql = "INSERT INTO locacao (idCliente, idCarro, dataInicio, dataFim, valorTotal, status) values(?,?,?,?,?,?)";
             PreparedStatement stmt = conexao.prepareStatement(sql);
@@ -25,7 +25,7 @@ public class LocacaoDAO {
             stmt.setDate(4, new Date(locacao.getDataFim().getTime()));
             stmt.setDouble(5, locacao.getValorTotal());
             stmt.setString(6, "ATIVA");
-            stmt.executeUpdate(); // Insert - Update - Delete
+            stmt.executeUpdate(); 
             
             String updateSql = "UPDATE carro SET status = 'INDISPONIVEL' WHERE id = ?";
             PreparedStatement update = conexao.prepareStatement(updateSql);
@@ -39,11 +39,11 @@ public class LocacaoDAO {
     }
 
     public Locacao consultar(Locacao locacao) throws ClassNotFoundException, ParseException {
-        //Conectar
+        
         Connection conexao = null;
         try {
-            conexao = ConectaDB.conectar(); //Abre a conexão
-            Statement stmt = conexao.createStatement(); // cria uma instrução
+            conexao = ConectaDB.conectar();
+            Statement stmt = conexao.createStatement(); 
 
             String sql = "SELECT * FROM locacao WHERE id = " + locacao.getId();
             ResultSet rs = stmt.executeQuery(sql);
@@ -74,8 +74,8 @@ public class LocacaoDAO {
         List lista = new ArrayList();
         Connection conexao = null;
         try {
-            conexao = ConectaDB.conectar(); //Abre a conexão
-            Statement stmt = conexao.createStatement(); // cria uma instrução
+            conexao = ConectaDB.conectar(); 
+            Statement stmt = conexao.createStatement();
 
             String sql = "SELECT * FROM locacao";
             ResultSet rs = stmt.executeQuery(sql);
@@ -107,15 +107,15 @@ public class LocacaoDAO {
     }
 
     public boolean inativar(Locacao locacao) throws ClassNotFoundException {
-        //Conectar
+        
         Connection conexao = null;
         try {
-            conexao = ConectaDB.conectar(); //Abre a conexão
+            conexao = ConectaDB.conectar(); 
             String sql = "UPDATE locacao SET status = 'CANCELADA' WHERE id = ?";
             PreparedStatement stmt = conexao.prepareStatement(sql);
 
             stmt.setInt(1, locacao.getId());
-            stmt.executeUpdate(); // Insert - Update - Delete
+            stmt.executeUpdate(); 
             return true;
         } catch (SQLException ex) {
             System.out.println("Erro SQL: " + ex);
@@ -124,10 +124,10 @@ public class LocacaoDAO {
     }
 
     public boolean alterar(Locacao locacao) throws ClassNotFoundException {
-        //Conectar
+     
         Connection conexao = null;
         try {
-            conexao = ConectaDB.conectar(); //Abre a conexão
+            conexao = ConectaDB.conectar(); 
             String sql = "UPDATE locacao SET idCliente= ?, idCarro= ?, dataInicio= ?,"
                     + " dataFim= ?, valorTotal= ?, status= ? WHERE id= ?";
             PreparedStatement stmt = conexao.prepareStatement(sql);
@@ -139,7 +139,7 @@ public class LocacaoDAO {
             stmt.setDouble(5, locacao.getValorTotal());
             stmt.setString(6, locacao.getStatus().toString());
             stmt.setInt(7, locacao.getId());
-            stmt.executeUpdate(); // Insert - Update - Delete
+            stmt.executeUpdate(); 
             return true;
         } catch (SQLException ex) {
             System.out.println("Erro SQL: " + ex);

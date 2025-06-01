@@ -57,8 +57,6 @@ public class Carro {
         this.status = status;
     }
 
-   
-
     public double getPreco() {
         return preco;
     }
