@@ -18,7 +18,7 @@
     >
       <div class="flex flex-col items-center text-center mb-6">
         <h1 class="font-semibold text-gray-500 text-3xl mb-2">Seja Bem vindo!</h1>
-        <p class="text-gray-400 text-sm">Vamo começar, entre com seu login</p>
+        <p class="text-gray-400 text-sm">Vamos começar, entre com seu login</p>
       </div>
       <form action="login.jsp" class="w-[300px] mb-4">
         <div class="flex flex-col gap-3 mb-9">
