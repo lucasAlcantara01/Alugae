@@ -20,11 +20,11 @@
       boolean cadastrado = empresaDAO.inserir(empresa); 
       if(cadastrado) { %>
       <div class="flex bg-green-400 rounded-lg p-6 w-fit">
-        <p class="text-green-800 font-semibold">Empresa cadastrado com Sucesso</p>
+        <p class="text-green-800 font-semibold">Empresa cadastrada com Sucesso</p>
       </div>
       <% } else { %>
         <div class="flex bg-red-400 rounded-lg p-6 w-fit">
-          <p class="text-red-800 font-semibold">Não foi possivel Cadastar Empresa</p>
+          <p class="text-red-800 font-semibold">Não foi possível Cadastar Empresa</p>
         </div>
       <% } %>
     </section>
