@@ -17,11 +17,11 @@ import="dao.CarroDAO"%> <%@page import="model.Carro"%>
       if(carroDAO.excluir(carro)){
       %>  
         <div class="flex bg-green-400 rounded-lg p-6 w-fit">
-          <p class="text-green-800 font-semibold">Carro Exluido com sucesso</p>
+          <p class="text-green-800 font-semibold">Carro excluido com sucesso</p>
         </div>
       <% }else{ %> 
         <div class="flex bg-red-400 rounded-lg p-6 w-fit">
-          <p class="text-red-800 font-semibold">Falha ao Excluir Carro</p>
+          <p class="text-red-800 font-semibold">Falha ao excluir Carro</p>
         </div>
       <% } %>
     </section>
