@@ -29,11 +29,11 @@
       boolean cadastrado = locacaoDAO.inserir(locacao); 
       if(cadastrado) { %>
       <div class="flex bg-green-400 rounded-lg p-6 w-fit">
-        <p class="text-green-800 font-semibold">Locação cadastrado com Sucesso</p>
+        <p class="text-green-800 font-semibold">Locação cadastrada com Sucesso</p>
       </div>
       <% } else { %>
         <div class="flex bg-red-400 rounded-lg p-6 w-fit">
-          <p class="text-red-800 font-semibold">Não foi possivel cadastar Locação</p>
+          <p class="text-red-800 font-semibold">Não foi possivel cadastrar Locação</p>
         </div>
       <% } %>
     </section>

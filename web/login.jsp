@@ -1,5 +1,7 @@
 <%@page import="model.Empresa"%> 
 <%@page import="dao.EmpresaDAO"%> 
+<%@page import="java.security.*"%>
+<%@page import="java.math.BigInteger"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -52,11 +54,23 @@
       <span class="text-xs text-gray-300">@alugae2025</span>
     </div>
 
-    <% String usuario = request.getParameter("usuario"); String senha =
-    request.getParameter("senha"); EmpresaDAO empresa = new EmpresaDAO();
-    boolean autenticado = empresa.login(usuario, senha); if(usuario!=null &&
-    senha!=null && !usuario.isEmpty() && !senha.isEmpty() && autenticado){
-    session.setAttribute("usuario", usuario);
-    response.sendRedirect("index.jsp"); } %>
+    <%
+        String usuario = request.getParameter("usuario"); 
+        String senha = request.getParameter("senha"); 
+
+        if (usuario != null && senha != null && !usuario.isEmpty() && !senha.isEmpty()) {
+            MessageDigest md5 = MessageDigest.getInstance("MD5");
+            md5.update(senha.getBytes(), 0, senha.length());
+            String senhaCriptografada = new BigInteger(1, md5.digest()).toString(16);
+
+            EmpresaDAO empresaDAO = new EmpresaDAO();
+            boolean autenticado = empresaDAO.login(usuario, senhaCriptografada); 
+
+            if (autenticado) {
+                session.setAttribute("usuario", usuario);
+                response.sendRedirect("index.jsp");
+            }
+        }
+    %>
   </body>
 </html>

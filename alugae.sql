@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 01/06/2025 às 20:01
+-- Tempo de geração: 05/06/2025 às 03:32
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -99,7 +99,7 @@ CREATE TABLE `empresa` (
 --
 
 INSERT INTO `empresa` (`id`, `nome`, `email`, `endereco`, `cnpj`, `senha`) VALUES
-(1, 'Alugae Locadora', 'contato@alugae.com.br', 'Rua das Locações, 123', '12.345.678/0001-90', 'senha123');
+(1, 'Alugae Locadora', 'contato@alugae.com.br', 'Rua das Locações, 123', '12.345.678/0001-90', 'e7d80ffeefa212b7c5c55700e4f7193e');
 
 -- --------------------------------------------------------
 
@@ -147,9 +147,9 @@ CREATE TABLE `pagamento` (
 --
 
 INSERT INTO `pagamento` (`id`, `IdLocacao`, `valorTotal`, `TipoPagamento`, `statusPagamento`, `data_pagamento`) VALUES
-(3, 3, 1243.00, 'CARTAO', 'PENDENTE', '2025-06-01 00:00:00'),
+(3, 3, 1243.00, 'CARTAO', 'PAGO', '2025-06-01 00:00:00'),
 (4, 10, 450.00, 'CARTAO', 'PAGO', '2025-06-16 00:00:00'),
-(5, 9, 450.00, 'PIX', 'PAGO', '2025-07-01 00:00:00');
+(6, 11, 450.00, 'PIX', 'PENDENTE', '2025-06-02 00:00:00');
 
 --
 -- Índices para tabelas despejadas
@@ -222,7 +222,7 @@ ALTER TABLE `locacao`
 -- AUTO_INCREMENT de tabela `pagamento`
 --
 ALTER TABLE `pagamento`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Restrições para tabelas despejadas
