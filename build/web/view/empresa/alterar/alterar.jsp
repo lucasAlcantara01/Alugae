@@ -27,7 +27,7 @@
             if (empresaDAO.alterar(empresa)){ 
         %>
             <div class="flex bg-green-400 rounded-lg p-6 w-fit">
-                <p class="text-green-800 font-semibold">Empresa alterado com sucesso</p>
+                <p class="text-green-800 font-semibold">Empresa alterada com sucesso</p>
             </div>
         <%  }else{  %>        
              <div class="flex bg-red-400 rounded-lg p-6 w-fit">
