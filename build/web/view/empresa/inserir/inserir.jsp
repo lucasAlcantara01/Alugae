@@ -24,7 +24,7 @@
       </div>
       <% } else { %>
         <div class="flex bg-red-400 rounded-lg p-6 w-fit">
-          <p class="text-red-800 font-semibold">Não foi possível Cadastar Empresa</p>
+          <p class="text-red-800 font-semibold">Não foi possível Cadastrar Empresa</p>
         </div>
       <% } %>
     </section>
