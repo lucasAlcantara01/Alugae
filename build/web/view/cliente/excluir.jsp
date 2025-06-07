@@ -18,7 +18,7 @@
       if(clienteDAO.excluir(cliente)){
       %>  
         <div class="flex bg-green-400 rounded-lg p-6 w-fit">
-          <p class="text-green-800 font-semibold">Cliente exlcuido com sucesso</p>
+          <p class="text-green-800 font-semibold">Cliente excluido com sucesso</p>
         </div>
       <% }else{ %> 
         <div class="flex bg-red-400 rounded-lg p-6 w-fit">
